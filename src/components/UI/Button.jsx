@@ -1,3 +1,4 @@
+// styles
 import "./Button.css";
 
 const Button = ({ type, children, onClick }) => {

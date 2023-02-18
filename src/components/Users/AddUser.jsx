@@ -3,6 +3,7 @@ import { useState } from "react";
 // components
 import Card from "../UI/Card";
 import Button from "../UI/Button";
+import Wrapper from "../Helpers/Wrapper";
 
 // styles
 import "./AddUser.css";
@@ -21,7 +22,7 @@ const AddUser = ({ onAddUser }) => {
 		if (enteredUsername.trim().length === 0 || enteredAge.trim().length === 0) {
 			setErrorModal({
 				title: "Invalid input",
-				message: "Please enter a valid name and age (non-empty values",
+				message: "Please enter a valid name and age (non-empty values)",
 			});
 			return;
 		}
@@ -56,7 +57,7 @@ const AddUser = ({ onAddUser }) => {
 	};
 
 	return (
-		<>
+		<Wrapper>
 			{errorModal && (
 				<ErrorModal
 					onErrorModal={errorHandler}
@@ -87,7 +88,7 @@ const AddUser = ({ onAddUser }) => {
 					<Button type="submit">Add User</Button>
 				</form>
 			</Card>
-		</>
+		</Wrapper>
 	);
 };
 
